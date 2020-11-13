@@ -1,0 +1,3 @@
+xbai <- read.table("./xbaI_sites_48-5k.txt", sep="\t", header=TRUE)
+p<-ggplot(xbai, aes(x=Sample, y=Fragment.Length..bp., fill=Sample)) + geom_violin(trim = FALSE) + geom_dotplot(binaxis="y", stackdir="center", stackratio=1.5, dotsize=0.25) + labs(y="Size (bp)", x="") + theme_classic() + theme(axis.line=element_blank()) + scale_fill_brewer(palette = "Set3") + scale_y_continuous(breaks = c(50000, 100000, 200000, 300000, 400000, 500000), labels = scales::comma) + coord_cartesian(ylim = c(65000, 540000))
+p
